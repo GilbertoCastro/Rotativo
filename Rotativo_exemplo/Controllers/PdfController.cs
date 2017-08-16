@@ -18,7 +18,7 @@ namespace Rotativo_exemplo.Controllers
 
         public ActionResult PDFPadrao()
         {
-            string customSwitches = string.Format("--header-center  \"CONTRATO DE EMPREITADA DE PRESTAÇÃO DE SERVIÇO\" " +
+            string customSwitches = string.Format("--header-center  \"COMO USAR O ROTATIVA\" " +
                         "--header-spacing \"8\" " +
                         "--header-font-name \"Open Sans\" " +
                         "--footer-font-size \"8\" " +

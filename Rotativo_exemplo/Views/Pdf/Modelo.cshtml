@@ -4,17 +4,17 @@
 
 <div class="row">
     <div class="col-md-12">
-        Rotativa é uma ferramenta de conversão de arquivos HTML para PDF no ASP, NET MVC baseado na ferramenta wkhtmltopdf.<br/>
-        Com isso os recursos de HTML e CSS podem ser aproveitados para gerar o PDF.<br/>
-        O Rotativa é um arquivo .exe e não uma biblioteca dll. Assim este deve ser instalada como um pacote nuget comum.<br/>
+        Rotativa é uma ferramenta de conversão de arquivos HTML para PDF no ASP, NET MVC baseado na ferramenta wkhtmltopdf.<br/><br />
+        Com isso os recursos de HTML e CSS podem ser aproveitados para gerar o PDF.<br/><br />
+        O Rotativa é um arquivo .exe e não uma biblioteca dll. Assim este deve ser instalada como um pacote nuget comum.<br/><br />
         O rotativa tem uma série de comandos que são passados pelo parâmetro ”CustomSwitches” no controller. Com isso é possível mudar o tamanho 
         da fonte assim como seu tipo. Os recursos de cabeçalho e rodapé são limitados mas podem ser usados de duas maneiras: carregando arquivos header e 
         footer no comando “CustomSwitches” com as instruções ou passando apenas as instruções específicas. Por exemplo se pode incluir um título no header 
         e uma numeração no rodapé. Como falado antes os recursos são limitados, logo não se tem a opção de usar um header carregado de um arquivo e um footer
-         passado pelos comandos. Ou os dois vem de arquivos carregados ou os dois vem de comandos pelas instruções.<br/>
+         passado pelos comandos. Ou os dois vem de arquivos carregados ou os dois vem de comandos pelas instruções.<br/><br />
         Algumas limitações são encontradas como por carregamento de imagens para compor o header/footer do pdf. Este só é possível até o momento por meio de um header/footer 
-        vindo de um arquivo.<br/>
-        Os arquivos carregados também tem a desvantagem de não se comunicarem com outras Views assim como não ter acesso a variáveis do projeto.
+        vindo de um arquivo.<br/><br />
+        Os arquivos carregados também tem a desvantagem de não se comunicarem com outras Views assim como não ter acesso a variáveis do projeto.<br /><br />
     </div>
 </div>
 <br/>
@@ -29,15 +29,47 @@
     <div class="col-md-12">
         <ul>
             <li>
-                Inicialmente vá ao gerenciador de pacotes Nuget e digite:
-
+                <div class="row">
+                    <div class="col-md-12">
+                        Inicialmente vá ao gerenciador de pacotes Nuget e digite:
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-xs-12" style="text-align: center">
+                        <img src="~/Img/instalar.png"/>
+                    </div>
+                </div>
+                <br />
             </li>
             <li>
-                Apos sua instalação temos o arquivo .exe na pasta Rotativa como mostrado abaixo:
+                <div class="row">
+                    <div class="col-md-12">
+                        Apos sua instalação temos o arquivo .exe na pasta Rotativa como mostrado abaixo:
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-xs-12" style="text-align: center">
+                        <img src="~/Img/instalado.png"/>
+                    </div>
+                </div>
+                <br />
             </li>
             <li>
-                No Controller devemos implementar o seguinte script para execução
-                No exemplo abaixo temos o carregamento do código por meio de comandos direto na string:
+                <div class="row">
+                    <div class="col-md-12">
+                        No Controller devemos implementar o seguinte script para execução
+                        No exemplo abaixo temos o carregamento do código por meio de comandos direto na string:
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-xs-12" style="text-align: center">
+                        <img src="~/Img/comandoString.png"  />
+                    </div>
+                </div>
+                <br />
             </li>
             <li>
                 Os comandos passados em CustomSwitches são feitos por meio de uma string. Logo é possível se concatenar algum valor no meio desta para que seja exibida como texto no cabeçalho.
@@ -63,60 +95,61 @@
                          Também pode ser usado no cabeçalho assim como ter sua posição e modos de escrita alterados.
                     </li>
                 </ul>
+                <br/>
                 No exemplo acima ainda foi passado outro parâmetro para customização do pdf, o “pageMargins”. 
-                <br/>
+                <br/><br />
                 Este tem como função alterar as margens do arquivo gerado, porém esta ação é feita de modo geral, atingindo o texto incluindo o header/footer.
-                <br/>
+                <br/><br />
                 No exemplo dado acima temos a concatenação de um parâmetro chamado “numeroExemplo”. Este é incluído como texto na string e exibido no cabeçalho do arquivo gerado.
                 Para o caso do cabeçalho e rodapé serem gerados por arquivos separados temos as seguintes alterações: 
-                <br/>
-                IMAGEM
+                <br/><br />
+                <div class="row">
+                    <div class="col-xs-12" style="text-align: center">
+                        <img src="~/Img/comandoArquivo.png"  />
+                    </div>
+                </div>
+                <br />
                 <br/>
                 Neste caso temos os dados do header e do footer definidos em duas Views no formato HTML! Fique claro que este comando não funciona com arquivos em CSHTML!
                 Os comandos de mudança de fonte e espaçamento ainda funcionam, porém ao tentar se incluir um texto este não surte mais efeito, mesmo que apenas um (footer ou header ) esteja sendo usado.
                 Os arquivos de header e footer abaixo fazem a mesma função de quando os parâmetros são passados na string, ou seja, mostram a numeração da página no footer e um título no header.
                 Os arquivos são:
+                <br /><br />
                 <strong>Header</strong>
-                IMAGEEEEEM
+                <br /><br />
+                <div class="row">
+                    <div class="col-xs-12" style="text-align: center">
+                        <img src="~/Img/header.png" />
+                    </div>
+                </div>
+                <br />
+
                 <strong>Footer</strong>
-                IMAGEEEEM
+                <br /><br />
+                <div class="row">
+                    <div class="col-xs-12" style="text-align: center">
+                        <img src="~/Img/footer.png " style="position: center" />
+                    </div>
+                </div>
+                <br />
 
-                No arquivo de footer temos uma série de parâmetros interno do rotativa que devem ser acessados como é mostrado acima.
+                No arquivo de footer temos uma série de parâmetros interno do rotativa que devem ser acessados como é mostrado acima.<br /><br />
 
-                Outros tipos comandos e mais informações podem ser obtidas nas fontes abaixo:
-                Displaying headers and footers in a PDF generated by Rotativa(MVC):
+                <strong>Outros tipos comandos e mais informações podem ser obtidas nas fontes abaixo:</strong>
+                <br /><br />
+                Displaying headers and footers in a PDF generated by Rotativa(MVC):<br />
                 https://bhavdiptala.blogspot.com.br/2016/05/displaying-headers-and-footers-in-pdf.html
-                Rotativa PDF em ASP .NET MVC
+
+                <br />
+                <br />
+                Rotativa PDF em ASP .NET MVC <br />
                 http://www.tiselvagem.com.br/desenvolvimento/asp-net/mvc-rotativa-pdf/
-                Rotativa
+
+                <br />
+                <br />
+                Rotativa<br />
                 http://rotativaforpdf.blogspot.com.br/2015/03/rotativa.html
             </li>
         </ul>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Footer:
-
-No arquivo de footer temos uma série de parâmetros interno do rotativa que devem ser acessados como é mostrado acima.
-
-Outros tipos comandos e mais informações podem ser obtidas nas fontes abaixo:
-Displaying headers and footers in a PDF generated by Rotativa(MVC):
-https://bhavdiptala.blogspot.com.br/2016/05/displaying-headers-and-footers-in-pdf.html
-Rotativa PDF em ASP .NET MVC
-http://www.tiselvagem.com.br/desenvolvimento/asp-net/mvc-rotativa-pdf/
-Rotativa
-http://rotativaforpdf.blogspot.com.br/2015/03/rotativa.html
-
