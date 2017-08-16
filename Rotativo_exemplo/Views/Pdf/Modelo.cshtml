@@ -7,13 +7,15 @@
         Rotativa é uma ferramenta de conversão de arquivos HTML para PDF no ASP, NET MVC baseado na ferramenta wkhtmltopdf.<br/><br />
         Com isso os recursos de HTML e CSS podem ser aproveitados para gerar o PDF.<br/><br />
         O Rotativa é um arquivo .exe e não uma biblioteca dll. Assim este deve ser instalada como um pacote nuget comum.<br/><br />
-        O rotativa tem uma série de comandos que são passados pelo parâmetro ”CustomSwitches” no controller. Com isso é possível mudar o tamanho 
-        da fonte assim como seu tipo. Os recursos de cabeçalho e rodapé são limitados mas podem ser usados de duas maneiras: carregando arquivos header e 
-        footer no comando “CustomSwitches” com as instruções ou passando apenas as instruções específicas. Por exemplo se pode incluir um título no header 
-        e uma numeração no rodapé. Como falado antes os recursos são limitados, logo não se tem a opção de usar um header carregado de um arquivo e um footer
-         passado pelos comandos. Ou os dois vem de arquivos carregados ou os dois vem de comandos pelas instruções.<br/><br />
-        Algumas limitações são encontradas como por carregamento de imagens para compor o header/footer do pdf. Este só é possível até o momento por meio de um header/footer 
-        vindo de um arquivo.<br/><br />
+        Apenas com o controller adicionado como mostrado mais abaixo, o rotativa em si já gera um PDF correspondente à pagina HTML. 
+        Porém para alguns ajustes mais específicos, o mesmo ainda apresenta a opção de receber uma série de comandos por meio do parâmetro ”CustomSwitches” no controller. 
+        Com isso é possível mudar o tamanho da fonte assim como seu tipo, e também fazer uso de um cabeçalho (header) e rodapé (footer). 
+        Os recursos de cabeçalho e rodapé são limitados mas podem ser usados de duas maneiras: carregando arquivos header e footer no comando “CustomSwitches” com as 
+        instruções ou passando apenas as instruções específicas. Por exemplo, usando apenas os comandos em CustomSwitches se pode incluir um título no header e 
+        uma numeração no rodapé. Como falado antes os recursos são limitados, logo não se tem a opção de usar um header carregado de um arquivo e um footer passado pelos comandos. 
+        Ou os dois vem de arquivos carregados ou os dois vem de comandos pelas instruções. <br/><br />
+        Outro tipo de limitação encontrada esta no carregamento de imagens para compor o header/footer do pdf. Este só é possível até o momento 
+        por meio de um header/footer vindo de um arquivo.<br/><br />
         Os arquivos carregados também tem a desvantagem de não se comunicarem com outras Views assim como não ter acesso a variáveis do projeto.<br /><br />
     </div>
 </div>
@@ -71,8 +73,14 @@
                 </div>
                 <br />
             </li>
+            <br/>
+            <br />
+            <br />
+            <br />
+            <br />
             <li>
-                Os comandos passados em CustomSwitches são feitos por meio de uma string. Logo é possível se concatenar algum valor no meio desta para que seja exibida como texto no cabeçalho.
+                Os comandos passados em CustomSwitches são feitos por meio de uma string. Logo é possível se concatenar algum valor no meio desta para que seja exibida como texto no cabeçalho ou rodapé.
+                <br/> <br/>
                 Os principais comandos estão exemplificados acima e são estes:
                 <ul>
                     <li>
@@ -100,7 +108,6 @@
                 <br/><br />
                 Este tem como função alterar as margens do arquivo gerado, porém esta ação é feita de modo geral, atingindo o texto incluindo o header/footer.
                 <br/><br />
-                No exemplo dado acima temos a concatenação de um parâmetro chamado “numeroExemplo”. Este é incluído como texto na string e exibido no cabeçalho do arquivo gerado.
                 Para o caso do cabeçalho e rodapé serem gerados por arquivos separados temos as seguintes alterações: 
                 <br/><br />
                 <div class="row">
@@ -113,6 +120,7 @@
                 Neste caso temos os dados do header e do footer definidos em duas Views no formato HTML! Fique claro que este comando não funciona com arquivos em CSHTML!
                 Os comandos de mudança de fonte e espaçamento ainda funcionam, porém ao tentar se incluir um texto este não surte mais efeito, mesmo que apenas um (footer ou header ) esteja sendo usado.
                 Os arquivos de header e footer abaixo fazem a mesma função de quando os parâmetros são passados na string, ou seja, mostram a numeração da página no footer e um título no header.
+                <br/>
                 Os arquivos são:
                 <br /><br />
                 <strong>Header</strong>
@@ -123,9 +131,21 @@
                     </div>
                 </div>
                 <br />
-
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                
                 <strong>Footer</strong>
-                <br /><br />
+                <br />
+                <br />
                 <div class="row">
                     <div class="col-xs-12" style="text-align: center">
                         <img src="~/Img/footer.png " style="position: center" />
@@ -149,6 +169,9 @@
                 <br />
                 Rotativa<br />
                 http://rotativaforpdf.blogspot.com.br/2015/03/rotativa.html
+
+                Os códigos aqui apresentados podem ser encontrados em:<br/>
+                https://github.com/GilbertoCastro/DTI.git
             </li>
         </ul>
     </div>
